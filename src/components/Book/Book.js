@@ -11,7 +11,9 @@ import styles from "./book.module.css";
 //start component
 const SingleBook = (props) => {
   const { title, author, coverImageUrl, synopsis } = props.book;
+
   const dispatch = useDispatch();
+
   return (
     <div className="card d-flex mb-3 p-3" style={{ position: "relative" }}>
       <div className="row">

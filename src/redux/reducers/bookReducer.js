@@ -12,7 +12,11 @@ const bookReducer = (state = initialState, action) => {
       const newState = {
         ...state,
         readingList: [...state.readingList, action.payload],
+
         //compare and stop duplicates
+        discoverList: state.discoverList.filter(
+          (book) => book.id !== action.payload.id
+        ),
       };
       return newState;
     }
@@ -22,6 +26,7 @@ const bookReducer = (state = initialState, action) => {
         readingList: state.readingList.filter(
           (book) => book.id !== action.payload.id
         ),
+        discoverList: [...state.discoverList, action.payload],
       };
       return newState;
     }
@@ -29,6 +34,10 @@ const bookReducer = (state = initialState, action) => {
       const newState = {
         ...state,
         finishedList: [...state.finishedList, action.payload],
+        //compare and stop duplicates
+        discoverList: state.discoverList.filter(
+          (book) => book.id !== action.payload.id
+        ),
       };
       return newState;
     }
