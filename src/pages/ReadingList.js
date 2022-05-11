@@ -17,11 +17,6 @@ const ReadingList = () => {
           <Link to="/">discover more</Link>.
         </p>
       )}
-      {/* <p>
-        Looks like you've finished all your books! Check them out in your{" "}
-        <Link to="finish">finished books</Link> or{" "}
-        <Link to="/">discover more</Link>.
-      </p> */}
     </PageLayout>
   );
 };
