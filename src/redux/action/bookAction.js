@@ -18,3 +18,10 @@ export const addToFinishedList = (payload) => {
     payload,
   };
 };
+
+export const loadBooks = (payload) => {
+  return {
+    type: "LOAD_BOOKS",
+    payload,
+  };
+};

@@ -3,7 +3,17 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import bookReducer from "./reducers/bookReducer";
 
-const applysMiddleware = applyMiddleware(thunk);
+const applysMiddleware = applyMiddleware(thunk, myMiddleware);
+
+const combinedReducer = combineReducers({
+  books: bookReducer,
+  //   users: userReducer,
+});
+
+const store = createStore(
+  combinedReducer,
+  composeWithDevTools(applysMiddleware)
+);
 
 // Outer function:
 function myMiddleware(storeAPI) {
@@ -14,15 +24,5 @@ function myMiddleware(storeAPI) {
     };
   };
 }
-
-const combinedReducer = combineReducers({
-  books: bookReducer,
-  //   users: userReducer,
-});
-
-const store = createStore(
-  combinedReducer,
-  composeWithDevTools(applysMiddleware, myMiddleware)
-);
 
 export default store;

@@ -41,6 +41,13 @@ const bookReducer = (state = initialState, action) => {
       };
       return newState;
     }
+    case "LOAD_BOOKS": {
+      const newState = {
+        ...state,
+        books: action.payload,
+      };
+      return newState;
+    }
     default: {
       return state;
     }
