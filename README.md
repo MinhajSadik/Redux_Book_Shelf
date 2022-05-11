@@ -1,2 +1,7 @@
 # Redux_Book_Shelf
-Redux_Book_Shelf FrontEnd Redux core concept working
+
+```bash
+Redux_Book_Shelf FrontEnd for Redux core concept learning
+and practice.
+
+```
