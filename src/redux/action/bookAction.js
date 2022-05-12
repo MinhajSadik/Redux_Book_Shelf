@@ -1,3 +1,13 @@
+export const loadBooks = (payload) => {
+  return (dispatch, getState) => {
+    fetch('')
+  };
+  return {
+    type: "LOAD_BOOKS",
+    payload,
+  };
+};
+
 export const addToReadingList = (payload) => {
   return {
     type: "ADD_TO_READING_LIST",
@@ -15,13 +25,6 @@ export const removeFromReadingList = (payload) => {
 export const addToFinishedList = (payload) => {
   return {
     type: "ADD_TO_FINISHED_LIST",
-    payload,
-  };
-};
-
-export const loadBooks = (payload) => {
-  return {
-    type: "LOAD_BOOKS",
     payload,
   };
 };
