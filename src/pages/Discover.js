@@ -4,13 +4,12 @@ import Book from "../components/Book/Book";
 import PageLayout from "../components/PageLayout/PageLayout";
 import { loadBooks } from "../redux/action/bookAction";
 const Discover = () => {
-  const discoverBooks = useSelector((state) => state.books.discoverList);
+  const discoverBooks = useSelector((state) => state.books.books);
 
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    dispatch(loadBooks())
-
+    dispatch(loadBooks());
   }, [dispatch]);
 
   return (

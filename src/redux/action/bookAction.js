@@ -1,10 +1,14 @@
 export const loadBooks = (payload) => {
   return (dispatch, getState) => {
-    fetch('')
-  };
-  return {
-    type: "LOAD_BOOKS",
-    payload,
+    fetch("http://localhost:5000/books")
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch({
+          type: "LOAD_BOOKS",
+          payload: data,
+        });
+        console.log("data from book api", data);
+      });
   };
 };
 

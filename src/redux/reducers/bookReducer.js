@@ -1,7 +1,7 @@
-import allBooks from "../../fakeData/books.json";
+// import allBooks from "../../fakeData/books.json";
 
 const initialState = {
-  discoverList: allBooks,
+  discoverList: [],
   readingList: [],
   finishedList: [],
 };
