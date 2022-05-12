@@ -40,7 +40,7 @@ const SingleBook = (props) => {
           className={styles.plus_icon}
         />
         <HiCheckCircle
-          onClick={() => dispatch(addToFinishedList(props.book))}
+          onClick={() => dispatch(addToFinishedList (props.book))}
           title="Mark as Finish"
           className={styles.check_icon}
         />

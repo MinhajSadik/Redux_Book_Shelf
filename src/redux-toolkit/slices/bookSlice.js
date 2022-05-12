@@ -33,4 +33,12 @@ const {
   loadBooks,
 } = bookSlice.actions;
 
+export const getBooks = (payload) => (dispatch) => {
+  fetch("https://redux-book-shelf.herokuapp.com/books")
+    .then((res) => res.json())
+    .then(({ data }) => {
+      dispatch(loadBooks(data));
+    });
+};
+
 export default bookSlice.reducer;

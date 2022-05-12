@@ -1,6 +1,6 @@
 export const loadBooks = (payload) => {
   return (dispatch, getState) => {
-    fetch("http://localhost:5000/books")
+    fetch("https://redux-book-shelf.herokuapp.com/books")
       .then((response) => response.json())
       .then((data) => {
         dispatch({
