@@ -3,7 +3,13 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import bookReducer from "./reducers/bookReducer";
 
-const applysMiddleware = applyMiddleware(thunk);
+const logger = (store) => (next) => (action) => {
+  console.log("action fired", action);
+  console.log("store", store);
+  // console.log("next", next(action));
+  next(action);
+};
+const externalMiddlewares = applyMiddleware(thunk, logger);
 
 const combinedReducer = combineReducers({
   books: bookReducer,
@@ -12,7 +18,7 @@ const combinedReducer = combineReducers({
 
 const store = createStore(
   combinedReducer,
-  composeWithDevTools(applysMiddleware)
+  composeWithDevTools(externalMiddlewares)
 );
 
 export default store;

@@ -7,12 +7,23 @@ export const loadBooks = (payload) => {
           type: "LOAD_BOOKS",
           payload: data,
         });
-        console.log("data from book api", data);
       });
+    const state = getState();
+    console.log("state from book api", state);
   };
 };
 
 export const addToReadingList = (payload) => {
+  // return async (dispatch) => {
+  //   const data = await axios.post(
+  //     "http://localhost:5000/addToReadingList",
+  //     payload
+  //   );
+  //   dispatch({
+  //     type: "ADD_TO_READING_LIST",
+  //     payload: data.data,
+  //   });
+  // };
   return {
     type: "ADD_TO_READING_LIST",
     payload,
