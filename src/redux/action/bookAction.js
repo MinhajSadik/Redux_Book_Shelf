@@ -8,8 +8,6 @@ export const loadBooks = (payload) => {
           payload: data,
         });
       });
-    const state = getState();
-    console.log("state from book api", state);
   };
 };
 
