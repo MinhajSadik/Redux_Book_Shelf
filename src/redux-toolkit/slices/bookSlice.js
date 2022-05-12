@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { createSlice } from "@reduxjs/toolkit";
 
 export const bookSlice = createSlice({
@@ -23,7 +24,7 @@ export const bookSlice = createSlice({
     loadBooks: (state, { payload }) => {
       state.discoverList = payload;
     },
-  },
+  },  
 });
 
 const {
