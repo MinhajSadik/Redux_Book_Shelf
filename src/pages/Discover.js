@@ -14,9 +14,11 @@ const Discover = () => {
 
   return (
     <PageLayout>
-      {discoverBooks.map((book) => (
-        <Book key={book.id} book={book} />
-      ))}
+      {discoverBooks?.length ? (
+        discoverBooks?.map((book) => <Book key={book.id} book={book} />)
+      ) : (
+        <div>Loading...</div>
+      )}
     </PageLayout>
   );
 };
